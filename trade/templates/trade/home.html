@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Trade.Agile - Home</title>
+    <link rel="stylesheet" href="{% static 'trade/css/home.css' %}">
+</head>
+<body>
+    <header class="cabeca">
+        <img onclick="window.location.href='{% url 'home' %}'" src="{% static 'trade/img/tradeLogo.png' %}">
+        <a href="{% url 'cadastro_clientes' %}">Cadastrar Cliente</a>
+        <a href="{% url 'demonstrativo_tabelas' %}">Tabelas</a>
+        <a href="{% url 'galeria_produtos' %}">Galeria</a>
+        <a href="{% url 'realizar_venda' %}">Vender</a>
+        <a  class="lgbBtn" href="{% url 'cadastroUser' %}">Cadastrar Usuário</a>
+    </header>
+    <main>
+        <div class="contMain">
+            <h1>Bem-vindo a central de comando da Trade.Agile!</h1>
+            <h3>Em nosso hub você pode cadastrar novos clientes e funcionários, verificar os produtos que temos em nosso catálogo e vende-los</h3>
+        </div>
+    </main>
+    <footer class="peGrande">
+        <div class="redes">
+            <img src="{% static 'trade/img/XLogo.png' %}">
+            <img src="{% static 'trade/img/instagramLogo.png' %}">
+            <img src="{% static 'trade/img/facebookLogo.png' %}">
+        </div>
+        <div class="nosPe">Trade.Agile<br>Prime</div>
+    </footer>
+</body>
+</html>

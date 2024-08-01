@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Clientes</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'trade/css/cadastroCli.css'%}">
+</head>
+<body>
+    <header class="cabeca">
+        <img onclick="window.location.href='{% url 'home' %}'" src="{% static 'trade/img/tradeLogo.png' %}">
+        <a href="{% url 'cadastro_clientes' %}">Cadastrar Cliente</a>
+        <a href="{% url 'demonstrativo_tabelas' %}">Tabelas</a>
+        <a href="{% url 'galeria_produtos' %}">Galeria</a>
+        <a href="{% url 'realizar_venda' %}">Vender</a>
+        <a  class="lgbBtn" href="{% url 'cadastroUser' %}">Cadastrar Usuário</a>
+    </header>
+    <div class="contTudo">
+        <a href="{% url 'home' %}" ; return false;">
+            <button class="button">
+                <div class="button-box">
+                    <span class="button-elem">
+                        <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                        </svg>
+                    </span>
+                    <span class="button-elem">
+                        <svg viewBox="0 0 46 40">
+                            <path
+                              d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                            ></path>
+                        </svg>
+                    </span>
+                </div>
+            </button>
+        </a>
+        <div id="topo">
+            <h1>Cadastro de Clientes</h1>
+        </div>
+        <div id="caixa">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Cadastrar</button>
+        </form>
+        </div>
+    </div>
+
+    <footer class="peGrande">
+        <div class="redes">
+            <img src="{% static 'trade/img/XLogo.png' %}">
+            <img src="{% static 'trade/img/instagramLogo.png' %}">
+            <img src="{% static 'trade/img/facebookLogo.png' %}">
+        </div>
+        <div class="nosPe">Trade.Agile<br>Prime</div>
+    </footer>
+</body>
+</html>

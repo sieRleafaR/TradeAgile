@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Demonstrativo das Tabelas</title>
+    <link rel="stylesheet" href="{% static 'trade/css/demonstrativo.css' %}">
+</head>
+<body>
+    <header class="cabeca">
+        <img onclick="window.location.href='{% url 'home' %}'" src="{% static 'trade/img/tradeLogo.png' %}">
+        <a href="{% url 'cadastro_clientes' %}">Cadastrar Cliente</a>
+        <a href="{% url 'demonstrativo_tabelas' %}">Tabelas</a>
+        <a href="{% url 'galeria_produtos' %}">Galeria</a>
+        <a href="{% url 'realizar_venda' %}">Vender</a>
+        <a  class="lgbBtn" href="{% url 'cadastroUser' %}">Cadastrar Usuário</a>
+    </header>
+    <div class="contTudo">
+        <h1 class="fala_tabela">Demonstrativo das Tabelas</h1>
+        <div class="alinhamento_deitado">
+            <div class="alinhamento_reto">
+                <ul>
+                    <h2>Clientes</h2>
+                    <div class="borda">
+                        {% for cliente in clientes %}
+                        <li>{{ cliente.nomecli }} - {{ cliente.codcli }}</li>
+                        {% endfor %}
+                    </div>
+                </ul>
+            </div>
+            <div class="alinhamento_reto">
+                <ul>
+                    <h2>Fornecedores</h2>
+                    {% for fornecedor in fornecedores %}
+                    <li>{{ fornecedor.nomeforn }} - {{ fornecedor.codiforn }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+             <div class="alinhamento_reto">
+                <ul>
+                    <h2>Produtos</h2>
+                    {% for produto in produtos %}
+                    <li>{{ produto.descprod }} - {{ produto.codiprod }}</li>
+                    {% endfor %}
+                </ul>
+             </div>
+
+            <div class="alinhamento_reto">
+                <ul>
+                    <h2>Vendas</h2>
+                    {% for venda in vendas %}
+                    <li>{{ venda.codivend }} - {{ venda.valorvend }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="peGrande">
+        <div class="redes">
+            <img src="{% static 'trade/img/XLogo.png' %}">
+            <img src="{% static 'trade/img/instagramLogo.png' %}">
+            <img src="{% static 'trade/img/facebookLogo.png' %}">
+        </div>
+        <div class="nosPe">Trade.Agile<br>Prime</div>
+    </footer>
+
+<button class="button" onclick="window.location.href='{% url 'home' %}'">
+  <div class="button-box">
+    <span class="button-elem">
+      <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+        ></path>
+      </svg>
+    </span>
+    <span class="button-elem">
+      <svg viewBox="0 0 46 40">
+        <path
+          d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+        ></path>
+      </svg>
+    </span>
+  </div>
+</button>
+
+
+
+</body>
+</html>

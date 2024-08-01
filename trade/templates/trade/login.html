@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+     <title>Trade.Agile - Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'trade/css/login.css' %}">
+</head>
+<body>
+    <img src="{% static 'trade/img/tradeLogo.png' %}" alt="" class="logo">
+    <div class="cont-1">
+        <div id="topo">
+            <h1>Log In</h1>
+        </div>
+        <div id="listra">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Entrar </button><br>
+            <a  class="lgbBtn" href="{% url 'cadastroUser' %}">Cadastrar</a>
+        </form></div>
+    </div>
+    <footer class="peGrande">
+        <div class="redes">
+            <img src="{% static 'trade/img/XLogo.png' %}">
+            <img src="{% static 'trade/img/instagramLogo.png' %}">
+            <img src="{% static 'trade/img/facebookLogo.png' %}">
+        </div>
+        <div class="nosPe">Trade.Agile<br>Prime</div>
+    </footer>
+</body>
+</html>
